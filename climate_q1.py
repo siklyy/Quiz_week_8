@@ -6,9 +6,9 @@ cursor=connection.cursor()
 cursor.execute("SELECT * FROM climate.db")
 dbfetch = cursor.fetchall()
 
-years = []
-co2 = []
-temp = []
+years = [row[0] for row in dbfetch]
+co2 = [row[1] for row in dbfetch]
+temp = [row[2] for row in dbfetch]
 
 plt.subplot(2, 1, 1)
 plt.plot(years, co2, 'b--') 
