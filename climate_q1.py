@@ -10,6 +10,8 @@ years = [row[0] for row in dbfetch]
 co2 = [row[1] for row in dbfetch]
 temp = [row[2] for row in dbfetch]
 
+connection.close()
+
 plt.subplot(2, 1, 1)
 plt.plot(years, co2, 'b--') 
 plt.title("Climate Data") 
